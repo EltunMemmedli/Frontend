@@ -1,0 +1,61 @@
+body{
+    background-color: #3f6ef5;
+}
+
+.Form_container{
+    background-color: white;
+    height: 600px;
+    width: 500px;
+    margin: 100px auto;
+    padding: 10px;
+    border-radius: 7px;
+}
+
+.form_class{
+    height: 50px;
+}
+
+.komp input{
+    display: block;
+    margin: 0 15px 15px 15px;
+    width: 85%;
+    height: 10%;
+    padding: 20px 18px;
+    border: 2.5px solid #e2e2e2;
+    border-radius: 10px;
+    font-family: "Roboto", sans-serif;
+    font-size: large;
+    
+
+}
+
+.Registration_class{
+    font-family: "Roboto", sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+    margin-left: 15px;
+}
+
+.komp2{
+    display: block;
+    margin: 15px 15px 15px 15px;
+    width: 93%;
+    height: 10%;
+    padding: 20px 18px;
+    border: 2.5px solid #e2e2e2;
+    border-radius: 10px;
+    font-family: "Roboto", sans-serif;
+    font-size: large;
+    color: white;
+    background-color: #3f70f3;
+}
+
+.p1{
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+.span1{
+    color: #79b5f2;
+    text-decoration: none;
+}
