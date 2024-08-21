@@ -1,0 +1,37 @@
+body {
+    background-image: url('Space.jpeg');
+    background-size: cover; /* Şəkilin tam ekranı əhatə etməsini təmin edir */
+    background-position: center; /* Şəkilin mərkəzləşdirilməsini təmin edir */
+    background-repeat: no-repeat; /* Şəkilin təkrarlanmamasını təmin edir */
+    height: 100vh; /* Tam hündürlük */
+}
+
+.Container{
+
+    width: 400px;
+    background-color: white;
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+    height: 500px;
+    border-radius: 10px;
+    
+}
+
+.Container input{
+    padding: 15px;
+    width: 200px;
+    border-radius: 10px;
+    border: 0.5px solid gray;
+    margin-top: 10px;
+    margin-right: 10px;
+    font-size: 20px;
+    
+}
+
+.Container button{
+    width: 100px;
+    padding: 10px;
+    border-radius: 10px;
+    border: 0.5px solid gray;   
+}
