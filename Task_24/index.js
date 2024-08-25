@@ -1,11 +1,37 @@
-// HTML məzmununu bir string kimi saxlayırsınız
-let html = `<div></div>`;
+document.getElementsByClassName("Button")[0].addEventListener("click", function() {
+   
+    document.getElementsByClassName("cards")[0].style.cssText = "display : block; margin-top : 20px; " ;
 
-// Bu string-i DOM-a əlavə edirsiniz
-document.body.insertAdjacentHTML('beforeend', html);
 
-// Yeni əlavə etdiyiniz elementi seçirsiniz
-let addedElement = document.body.lastElementChild;
+    let paragraf = document.getElementsByClassName("head")[0];
+    
 
-// Stil tətbiq edirsiniz
-addedElement.style.cssText = "padding: 30px;";
+    let nameInput = document.createElement("input");
+    nameInput.type = "text";
+    nameInput.placeholder = "Konteynerə ad verin...";
+    nameInput.style.cssText = "margin-top: 10px; margin-bottom: 10px; width : 100%; padding-top : 10px; border : 0px solid white";
+
+  
+    paragraf.replaceWith(nameInput);
+
+    document.getElementsByClassName("Button_2")[0].addEventListener("click", function(){
+        document.getElementsByClassName("text")[0].style.cssText = "display : block; margin-top : 10px" ;
+
+         
+   
+        let button = document.getElementsByClassName("Button_2")[0];
+
+        
+        document.getElementsByClassName("cards")[0].appendChild(button);
+    })
+
+ 
+   
+    let button = document.getElementsByClassName("Button")[0];
+
+    
+    document.getElementsByClassName("main_container")[0].appendChild(button);
+
+
+
+});
