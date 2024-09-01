@@ -1,42 +1,36 @@
-let Card = `
-<li class="cards">
-    <div class="div">
-        <input type="text" class="head" placeholder="Konteyner adını daxil edin:">
-    </div>
-    <button class="Button_2">
-        <p>+</p>
-    </button>
-</li>`;
-
-document.getElementsByClassName("Button")[0].addEventListener("click", function(){
-
-    let container = document.getElementsByClassName("main_container")[0];
-    
-
-    container.insertAdjacentHTML('beforeend', Card);
 
 
-    let cards = document.getElementsByClassName("cards");
-    let lastCard = cards[cards.length - 1];
+document.getElementById("searchButton").addEventListener("click", function() {
+    const countryName = document.getElementById("countryInput").value;
+
+
 
     
-    lastCard.querySelector(".Button_2").addEventListener("click", function(){
-        lastCard.insertAdjacentHTML('beforeend', Properties);
-    });
+    if (countryName) {
+        const countryRequest = new XMLHttpRequest();
+        
+        countryRequest.open("GET", `https://restcountries.com/v3.1/name/${countryName}`);
+        countryRequest.send();
+
+        countryRequest.addEventListener("load", () => {
+            if (countryRequest.status === 200) {
+                const response = JSON.parse(countryRequest.responseText);
+                document.getElementById("output").innerHTML = `
+                    <p>Ölkə: ${response[0].name.common}</p>
+                    <p>Paytaxt: ${response[0].capital[0]}</p>
+                    <p>Region: ${response[0].region}</p>
+                    <p>Əhali: ${response[0].population}</p>
+                    <img src="${response[0].flags.png}" alt="Bayraq">
+                `;
+            } else {
+                document.getElementById("output").innerHTML = "Ölkə tapılmadı!";
+            }
+        });
+
+        countryRequest.addEventListener("error", () => {
+            document.getElementById("output").innerHTML = "Xəta baş verdi!";
+        });
+    } else {
+        document.getElementById("output").innerHTML = "Zəhmət olmasa ölkə adı daxil edin!";
+    }
 });
-
-let Properties = `
-<div class="text">
-    <p class="description">
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
-    <div class="img">
-        <img src="justify.png" alt="" style="margin-right: 15px;">
-        <img src="checkbox.png" alt="">
-        <p>4/8</p>
-        <img src="attach.png" alt="">
-        <p>2</p>
-        <img src="comments.png" alt="">
-        <p style="margin: 0 20px 0 5px;">4</p>
-        <img src="man_1.png" alt="" style="width: 40px; height: 40px; margin-top: -10px;">
-    </div>
-</div>`;
